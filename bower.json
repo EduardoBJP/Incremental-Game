@@ -1,0 +1,27 @@
+{
+  "name": "IncrementalGame",
+  "version": "0.0.0.1",
+  "homepage": "https://github.com/EduardoBJP/Incremental-Game",
+  "authors": [
+    "EduardoBJP <eduardo_bjp@yahoo.com.br>"
+  ],
+  "description": "Protoype of incremental game",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Games"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "~4.0.3",
+    "modernizer": "~2.8.2"
+  }
+}
