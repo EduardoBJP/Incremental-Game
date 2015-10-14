@@ -10,10 +10,13 @@ function Building(name) {
 	this.numBuildings = 0;
 	this.progressValue = 0;
 	
-	this.buttonEl = $('div').text('+1').button();
-	this.labelEl = $('div').text(this.name + ' (' + this.numBuildings + ')').addClass('building-label');
-	this.pBarEl = $('div').progressbar();
-		
+	var id = '#' + this.name + ' ';
+	
+	this.labelEl = $(id + '.bld-label').text(this.name);
+	this.slidebarEl = $(id + '.slidebar').progressbar({value: 50});
+	this.nmbrEl = $(id + '.bld-number').text(this.numBuildings);
+	this.pBarEl = $(id + '.progressbar').progressbar();
+	
 }; 
 
 
@@ -27,19 +30,8 @@ var buildingArray = {
 	uses Handlebars template */
 	init: function(){
 		var toAppend = "";
-		for (var i = 0; i < this.buildings.length; i++) {
-			var bld = this.buildings[i];
-			toAppend += 
-		}
+
 		$('#building-container').append(toAppend);
-		
-		for (var i = 0; i < this.buildings.length; i++){
-			var bld = this.buildings[i];
-			this.buildings[i].buttonEl = $('#building-container #' + bld.name + ' button').button().on('click', function(bld){
-				bld.numBuildings++;
-			});
-			this.buildings[i].pBarEl($('#building-container #' + bld.name + ' .progressbar').progressbar());
-		}
 		
 	}
 	
