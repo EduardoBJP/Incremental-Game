@@ -7,37 +7,14 @@ see buildingArray for jQuery DOM manipulation on this class
 
 function Building(name) {
 	this.name = name;
-	var number = 0;
-	var pBarEl;
-	var buttonEl;
+	this.numBuildings = 0;
+	this.progressValue = 0;
 	
-	this.getButtonEl = function (){
-		return buttonEl;
-	};
-	
-	this.setButtonEl = function (el){
-		buttonEl = el;
-	};
-	
-	this.getPBarEl = function (){
-		return pBarEl;
-	};
-	
-	this.setPBarEl = function (el){
-		pBarEl = el;
-	};
-	
-	var increase = function (ammount) {
-		var inc = 1 || ammount;
-		number += inc;
-	};
-	
-	this.handleClick = function () {
-		increase();
-		pBarEl.progressbar({value: number});
+	this.buttonEl = $('div').text('+1').button();
+	this.labelEl = $('div').text(this.name + ' (' + this.numBuildings + ')').addClass('building-label');
+	this.pBarEl = $('div').progressbar();
 		
-	}
-} 
+}; 
 
 
 
@@ -49,17 +26,19 @@ var buildingArray = {
 	/* Initializes the buildings in the building-container div.
 	uses Handlebars template */
 	init: function(){
-		var source   = $("#building-template").html();
-		var bldTemplate = Handlebars.compile(source);
 		var toAppend = "";
 		for (var i = 0; i < this.buildings.length; i++) {
-			toAppend += bldTemplate({name: this.buildings[i].name});
+			var bld = this.buildings[i];
+			toAppend += 
 		}
 		$('#building-container').append(toAppend);
 		
 		for (var i = 0; i < this.buildings.length; i++){
-			this.buildings[i].setButtonEl($('#building-container #' + this.buildings[i].name + ' button').button().on('click', this.buildings[i].handleClick));
-			this.buildings[i].setPBarEl($('#building-container #' + this.buildings[i].name + ' .progressbar').progressbar());
+			var bld = this.buildings[i];
+			this.buildings[i].buttonEl = $('#building-container #' + bld.name + ' button').button().on('click', function(bld){
+				bld.numBuildings++;
+			});
+			this.buildings[i].pBarEl($('#building-container #' + bld.name + ' .progressbar').progressbar());
 		}
 		
 	}

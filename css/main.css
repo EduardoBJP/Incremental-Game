@@ -95,15 +95,29 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+		margin-left:2%;
+}	 
+	 
 #building-container{
-		width: 50%;
+		width: 30%;
 }
 
+#building-container .building{
+		position: relative;
+		margin-top: 5%;
+}
 
+#building-container .building-label{
+		margin-bottom: 2px;
+}
 
-
-
-
+#building-container button{
+		font-size: 0.5em;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+}
 
 
 /* ==========================================================================
