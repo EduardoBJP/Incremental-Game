@@ -15,8 +15,19 @@
         <link rel="stylesheet" href="css/main.css">
 				
         <script src="bower_components/modernizr/modernizr.js"></script>
+				
+				<!-- HandleBars Templates -->
+				<script id="building-template" type="text/x-handlebars-template">
+					<div class="building" id="{{name}}">
+						{{name}}
+						<button>+1</button>
+						<div class="progressbar"></div>
+					</div>
+				</script>
+				
     </head>
-    <body>
+		
+		<body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -26,26 +37,7 @@
 				<div class="main">
 					<p>Initial version! Just testing stuff around.</p>
 					<div id="building-container">
-						<div class="building" id="farm">
-							Farm
-							<button>+1</button>
-							<div class="progressbar"></div>
-						</div>
-						<div class="building" id="pasture">
-							Pasture
-							<button>+1</button>
-							<div class="progressbar"></div>
-						</div>
-						<div class="building" id="gatherer">
-							Gatherer
-							<button>+1</button>
-							<div class="progressbar"></div>
-						</div>
-						<div class="building" id="hunter">
-							Hunter
-							<button>+1</button>
-							<div class="progressbar"></div>
-						</div>
+						<!-- Contains buildings using building-template -->
 					</div>
 					
 				</div>
@@ -54,6 +46,7 @@
         <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script> -->
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 				<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+				<script src="bower_components/handlebars/handlebars.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
