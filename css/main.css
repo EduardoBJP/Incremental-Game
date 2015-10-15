@@ -116,9 +116,7 @@ textarea {
 body{
 		margin-left:2%;
 }	 
-
-
-	 
+ 
 #building-container{
 		width: 30%;
 }
@@ -132,11 +130,25 @@ body{
 		margin-bottom: 2px;
 }
 
-#building-container button{
-		font-size: 0.5em;
-		position: absolute;
-		right: 0px;
-		top: 0px;
+#building-container .mltpbar-neg2 {
+		background: transparent;
+}
+
+#building-container .mltpbar-neg1 {
+		background: transparent;
+		border-left: 1px solid #BF4044;
+}
+
+#building-container .mltpbar-verylow {
+		background: #FF0008;
+}
+
+#building-container .mltpbar-low {
+		background: #FFA600;
+}
+
+#building-container .mltpbar-high {
+		background: #00FFF2;
 }
 
 
