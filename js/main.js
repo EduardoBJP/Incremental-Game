@@ -13,7 +13,7 @@ function Building(name) {
 	var id = '#' + this.name + ' ';
 	
 	this.labelEl = $(id + '.bld-label').text(this.name);
-	this.slidebarEl = $(id + '.slidebar').progressbar({value: 50});
+	this.multpBarEl = $(id + '.multiprogressbar').multiprogressbar({parts: [{value: 50}]});
 	this.nmbrEl = $(id + '.bld-number').text(this.numBuildings);
 	this.pBarEl = $(id + '.progressbar').progressbar();
 	
